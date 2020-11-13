@@ -23,4 +23,4 @@ yaxis_title="Month of Year")
 
 # Plot the figure and saving in a html file
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='heatmap.html')
+pyo.plot(fig, filename='temperatureHeatmap.html')

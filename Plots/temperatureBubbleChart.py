@@ -6,19 +6,8 @@ df = pd.read_csv('../Datasets/Weather2014-15.csv')
 
 
 
-# Removing empty spaces from State column to avoid errors
-#df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-
-# Creating unrecovered column
-#df['Unrecovered'] = df['Confirmed'] - df['Deaths'] - df['Recovered']
-
-# Removing China and Others from data frame
-#df = df[(df['Country'] != 'China') & (df['Country'] != 'Others')]
-
-# Creating sum of number of cases group by Country Column
+# Creating sum of number of avgs group by month Column
 new_df = df.groupby(['month',]).agg({"average_min_temp": 'mean', "average_max_temp": 'mean'}).reset_index()
-
-#{'average_max_temp': 'sum', 'average_min_temp': 'sum'}).reset_index()
 
 # Preparing data
 data = [
